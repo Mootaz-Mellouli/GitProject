@@ -29,14 +29,6 @@ public class ProjectController {
 		produitService.assignProduitToStock(idProduit, idStock);
 	}
 
-    @GetMapping
-    public List<Facture> getFactures() {
-        return factureService.retrieveAllFactures();
-    }
-
-	@GetMapping("/retrieve-all-stocks")
-	public List<Stock> getStocks() {
-		return stockService.retrieveAllStocks();
 	}
 
 	@GetMapping("/{stock-id}")
@@ -48,10 +40,6 @@ public class ProjectController {
 	return secteurActiviteService.retrieveAllSecteurActivite();
 	}
 
-	@GetMapping("/{secteurActivite-id}")
-	public SecteurActivite retrieveSecteurActivite(@PathVariable("secteurActivite-id") Long secteurActiviteId) {
-		return secteurActiviteService.retrieveSecteurActivite(secteurActiviteId);
-	}
 
 	@PostMapping
 	public SecteurActivite addSecteurActivite(@RequestBody SecteurActivite sa) {
@@ -75,10 +63,6 @@ public class ProjectController {
 		secteurActiviteService.deleteSecteurActivite(secteurActiviteId);
 	}
 
-	@PutMapping
-	public SecteurActivite modifySecteurActivite(@RequestBody SecteurActivite secteurActivite) {
-		return secteurActiviteService.updateSecteurActivite(secteurActivite);
-	}
 
 	
 	@DeleteMapping("/{fournisseur-id}")
