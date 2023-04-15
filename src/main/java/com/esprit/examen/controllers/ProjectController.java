@@ -1,46 +1,9 @@
 package com.esprit.examen.controllers;
+import org.springframework.beans.factory.annotation.Autowired;
 
-<<<<<<< HEAD
 @RestController
 @Api(tags = "Gestion des fournisseurss")
-@RequestMapping("/fournisseur")
 @RequiredArgsConstructor
-public class FournisseurRestController {
-
-	private final IFournisseurService fournisseurService;
-
-	@GetMapping
-	public List<Fournisseur> getFournisseurs() {
-		return fournisseurService.retrieveAllFournisseurs();
-	}
-
-	@GetMapping("/{fournisseur-id}")
-	public Fournisseur retrieveFournisseur(@PathVariable("fournisseur-id") Long fournisseurId) {
-		return fournisseurService.retrieveFournisseur(fournisseurId);
-	}
-
-	@PostMapping
-	public Fournisseur addFournisseur(@RequestBody Fournisseur f) {
-		Fournisseur fournisseur = fournisseurService.addFournisseur(f);
-		return fournisseur;
-	}
-
-	@DeleteMapping("/{fournisseur-id}")
-	public void removeFournisseur(@PathVariable("fournisseur-id") Long fournisseurId) {
-		fournisseurService.deleteFournisseur(fournisseurId);
-	}
-
-	@PutMapping
-	public Fournisseur modifyFournisseur(@RequestBody Fournisseur fournisseur) {
-		return fournisseurService.updateFournisseur(fournisseur);
-	}
-
-		@PutMapping(value = "/assignSecteurActiviteToFournisseur/{idSecteurActivite}/{idFournisseur}")
-		public void assignProduitToStock(@PathVariable("idSecteurActivite") Long idSecteurActivite, @PathVariable("idFournisseur") Long idFournisseur) {
-			fournisseurService.assignSecteurActiviteToFournisseur(idSecteurActivite, idFournisseur);
-		}
-=======
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class ProjectController {
 	@Autowired
@@ -75,8 +38,21 @@ public class ProjectController {
 	public Stock retrieveStock(@PathVariable("stock-id") Long stockId) {
 		return stockService.retrieveStock(stockId);
 	}
-	
+	@GetMapping("/{fournisseur-id}")
+	public Fournisseur retrieveFournisseur(@PathVariable("fournisseur-id") Long fournisseurId) {
+		return fournisseurService.retrieveFournisseur(fournisseurId);
+	}
 
->>>>>>> 87f39f679a19ab02a5fa52d022330baa9016f5b6
+	@PostMapping
+	public Fournisseur addFournisseur(@RequestBody Fournisseur f) {
+		Fournisseur fournisseur = fournisseurService.addFournisseur(f);
+		return fournisseur;
+	}
+
+	@DeleteMapping("/{fournisseur-id}")
+	public void removeFournisseur(@PathVariable("fournisseur-id") Long fournisseurId) {
+		fournisseurService.deleteFournisseur(fournisseurId);
+	}
+
 }
 
