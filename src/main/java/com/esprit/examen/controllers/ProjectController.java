@@ -92,5 +92,9 @@ public class ProjectController {
 	public SecteurActivite modifySecteurActivite(@RequestBody SecteurActivite secteurActivite) {
 		return secteurActiviteService.updateSecteurActivite(secteurActivite);
 	}
+
+	public void testStach() {
+		System.out.println("STAAACH");
+	}
 }
 
