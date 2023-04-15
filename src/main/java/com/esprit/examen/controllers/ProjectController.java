@@ -92,5 +92,16 @@ public class ProjectController {
 	public SecteurActivite modifySecteurActivite(@RequestBody SecteurActivite secteurActivite) {
 		return secteurActiviteService.updateSecteurActivite(secteurActivite);
 	}
+
+	
+	@DeleteMapping("/{fournisseur-id}")
+	public void removeFournisseur(@PathVariable("fournisseur-id") Long fournisseurId) {
+		fournisseurService.deleteFournisseur(fournisseurId);
+	}
+
+	@PutMapping
+	public Fournisseur modifyFournisseur(@RequestBody Fournisseur fournisseur) {
+		return fournisseurService.updateFournisseur(fournisseur);
+	}
 }
 
